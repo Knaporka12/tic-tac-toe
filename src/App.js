@@ -81,15 +81,9 @@ function App() {
 
     } else {
 
-      let markedCells = 0;
-
-      newTable.map((ele) => {
-        if (ele.value) markedCells++;
-      });
-
-      if (markedCells === table.length) {
+      if (newTable.every((ele) => ele.value !== '')){
         setResult('d');
-        score.draws++
+        score.draws++;
       }
 
     }
