@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+$font-color: #000;
+$font-color-secondary: #006666;
+$table-color: #E5E4E2;
+
+@mixin flex-center($direction: row, $wrap: wrap) {
+    display: flex;
+    flex-flow: $direction $wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+svg{
+    width: 50px;
+    height: auto;
+}
+
+body,
+#root,
+.App {
+    @include flex-center(column, nowrap);
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Nunito", sans-serif;
+}
+
+#root,
+.App {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    margin-top: 0.5rem;
+
+    &__h1 {
+        font-size: 6rem;
+        text-align: center;
+    }
+}
+
+.main {
+    width: 100%;
+    @include flex-center(column, nowrap);
+    gap: 2rem;
+    flex-grow: 1;
+    margin-top: -100px;
+
+    &__table, &__tbody, &__tr {
+        border: none;
+    }
+
+    &__tr{
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+    }
+
+    &__td{
+        border: 2px solid $font-color;
+        margin-top: -2px;
+        margin-right: -2px;
+        @include flex-center();
+        background-color: $table-color;
+        transition: 0.25s all;
+        cursor: pointer;
+
+        &:hover{
+            background-color: darken($table-color, 15%);
+        }
+    }
+
+    &__h2 {
+        font-size: 3rem;
+    }
+
+    &__article{
+        @include  flex-center(column, nowrap);
+        gap: 1rem;
+    }
+
+    &__container--result {
+        @include flex-center()
+    }
+
+    &__para, &__para--score{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    &__para--score{
+        @include flex-center(column, nowrap)
+    }
+
+    span{
+        margin-top: 0.25rem;
+        font-size: 1.65rem;
+        color: $font-color-secondary;
+        font-weight: bold;
+    }
+
+    .turn{
+        font-weight: bold;
+        color: $font-color;
+        font-size: 2rem;
+    }
+
+    &__btn{
+        padding: 0.5rem 1rem;
+        font-size: 1.55rem;
+        border: 2px solid $font-color;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-left: 1rem;
+        background-color: $table-color;
+        transition: 0.25s all;
+
+        &:hover{
+            color: white;
+            background-color: $font-color-secondary;
+        }
+    }
+}
+
+
+
+

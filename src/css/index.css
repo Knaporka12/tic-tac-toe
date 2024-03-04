@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+svg {
+  width: 50px;
+  height: auto;
+}
+
+body,
+#root,
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+}
+
+#root,
+.App {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.header__h1 {
+  font-size: 6rem;
+  text-align: center;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-grow: 1;
+  margin-top: -100px;
+}
+.main__table, .main__tbody, .main__tr {
+  border: none;
+}
+.main__tr {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+}
+.main__td {
+  border: 2px solid #000;
+  margin-top: -2px;
+  margin-right: -2px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #E5E4E2;
+  transition: 0.25s all;
+  cursor: pointer;
+}
+.main__td:hover {
+  background-color: #c1beba;
+}
+.main__h2 {
+  font-size: 3rem;
+}
+.main__article {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.main__container--result {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.main__para, .main__para--score {
+  font-size: 2rem;
+  text-align: center;
+}
+.main__para--score {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.main span {
+  margin-top: 0.25rem;
+  font-size: 1.65rem;
+  color: #006666;
+  font-weight: bold;
+}
+.main .turn {
+  font-weight: bold;
+  color: #000;
+  font-size: 2rem;
+}
+.main__btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.55rem;
+  border: 2px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 1rem;
+  background-color: #E5E4E2;
+  transition: 0.25s all;
+}
+.main__btn:hover {
+  color: white;
+  background-color: #006666;
+}/*# sourceMappingURL=index.css.map */
