@@ -5,7 +5,7 @@ import GameInfo from "./GameInfo";
 
 function App() {
 
-  let score = (JSON.parse(localStorage.getItem('score')) || { playerX: 0, playerO: 0, draws: 0 });
+  let score = (JSON.parse(localStorage.getItem('score')) || { X: 0, O: 0, draws: 0 });
 
   const [table, setTable] = useState([
     {
@@ -57,7 +57,7 @@ function App() {
 
     let gameOver = false;
 
-    for (let i = 0; i < 3; i++){
+    for (let i = 0; i < table.length / 3; i++){
       if (
         newTable[i*3].value && newTable[i*3].value === newTable[(i*3)+1].value && newTable[(i*3)+1].value === newTable[(i*3)+2].value ||
         newTable[i].value && newTable[i].value === newTable[i+3].value && newTable[i+3].value === newTable[i+6].value
@@ -76,13 +76,8 @@ function App() {
 
     if (gameOver) {
 
-      if (turn === 'X') {
-        setResult('X');
-        score.playerX++;
-      } else {
-        setResult('O');
-        score.playerO++;
-      }
+      setResult(newTable[id - 1].value)
+      score[newTable[id - 1].value]++;
 
     } else {
 

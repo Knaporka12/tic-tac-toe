@@ -31,8 +31,8 @@ const GameInfo = ({score, turn, result, playAgain}) => {
 
         <p className="main__para--score">All-time Score:
 
-            <span>Player X: {score.playerX}</span>
-            <span>Player O: {score.playerO}</span>
+            <span>Player X: {score.X}</span>
+            <span>Player O: {score.O}</span>
             <span>Draws: {score.draws}</span>
 
         </p>
